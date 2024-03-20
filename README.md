@@ -4,11 +4,11 @@
 * Email (@ccc): 
 * Matrícula: 
 
-# Roteiro: Implementação de ArrayList
+# Roteiro: Implementação de DoubleLinkedList
 
 ## Material Teórico 
 
-[ArrayList](https://joaoarthurbm.github.io/eda/posts/arraylist/)
+[LinkedList](https://joaoarthurbm.github.io/eda/posts/linkedlist/)
 
 ## O template
 
@@ -30,14 +30,14 @@
 
 ## Introdução
 
-Este roteiro envolve a implementação das principais operações de arraylist.
+Este roteiro envolve a implementação das principais operações de linkedlist.
 
 ## A tarefa. 
 
 ### Implementação e testes
 
 
-Implemente os métodos da classe ArrayList. A explicação do que fazer está como comentário no código. Seu objetivo é passar nos testes que disponibilizei.
+Implemente os métodos da classe LinkedList. A explicação do que fazer está como comentário no código. Seu objetivo é passar nos testes que disponibilizei. Sua implementação deve ser duplamente encadeada.
 
 Ah...confira (sempre!) se você passa nos testes: `gradle test`.
 
