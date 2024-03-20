@@ -43,6 +43,18 @@ Ah...confira (sempre!) se você passa nos testes: `gradle test`.
 
 Óbvio que você pode simplesmente copiar código da Internet e colar lá. Eu mesmo disponibilizo código. Mas, conselho, assim você não aprende :)
  
+## Mais estudo
+
+Implemente os seguintes métodos na mesma classe:
+
+* ```void moveToHead(int index)``` . Esse método move o elemento que está em index para a cabeça da fila. Ele é O(n) para procurar o elemento, mas para mover, você deve fazer em O(1), ou seja, apenas manipulando referências.
+
+* ```void insereOrdenado(int v)```. Dada uma lista já em ordem crescente, insere o valor passado como parâmetro no seu devido lugar para que a lista continue ordenada após a sua inserção.
+
+* ```void swap(Node n1, Node n2)```. Troca n1 e n2. Não é permitido trocar os valores. Você tem que manipular as referências. Esse algoritmo deve ser O(1), pois já recebe os nós a serem trocados.
+
+* ```void inverte()```. Esse método deve inverter uma lista. Isto é, tail passa a ser head, o elemento anterior a tail passa a ser o segundo da lista e assim por diante, até chegar em head, que será o último elemento da lista (tail). Não é permitido utilizar estrutura auxiliar.
+
 ## Entregando o lab
 
 > Passo 0. Modifique o arquivo README. Coloque seu nome, email @ccc e matrícula nos lugares indicados. Se você não fizer isso, não considero que sua prova foi assinada e, portanto, não vou corrigir. Não mude a formatação da linha. Apenas inclua seus dados.
