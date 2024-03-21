@@ -14,11 +14,9 @@ public class LinkedList {
     }
 
     public void addLast(int valor) {
-
     }
 
     // adiciona um valor na posição passada como parâmetro
-    // posições válidas:  0 <= index <= size.
     public void add(int index, int valor) {
     }
 
@@ -33,7 +31,7 @@ public class LinkedList {
     // retorna o elemento na posição  passada como parâmetro
     // deve lançar IndexOutOfBoundsException se o índice não for válido.
     public int get(int index) {
-        return -1;
+         return -1;
     }
 
     // deve lançar exceção caso a fila esteja vazia.
@@ -43,7 +41,7 @@ public class LinkedList {
 
     // deve lançar exceção caso a fila esteja vazia.
     public int removeLast() {
-       return -1;
+        return -1;
     }
 
     // remove o valor no índice passado como parâmetro. retorna o valor removido.
@@ -60,7 +58,7 @@ public class LinkedList {
 
     // retorna a posição da primeira ocorrência do valor passado como parâmetro.
     public int indexOf(int value) {
-       return -1;
+        return -1;
     }
 
     public boolean contain(int v) {
@@ -74,7 +72,15 @@ public class LinkedList {
     
     // deve retornar uma string representando a lista. 
     public String toString() {
-        return "";
+        if (isEmpty()) return "";
+
+        Node aux = this.head;
+        String out = "";
+        while (aux != null) {
+            out += aux.value + ", ";
+            aux = aux.next;
+        }
+        return out.substring(0, out.length() - 2);
     }
     
     public int size() {
