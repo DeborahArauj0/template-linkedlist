@@ -37,7 +37,7 @@ Este roteiro envolve a implementação das principais operações de linkedlist.
 ### Implementação e testes
 
 
-Implemente os métodos da classe LinkedList. A explicação do que fazer está como comentário no código. Seu objetivo é passar nos testes que disponibilizei. Sua implementação deve ser duplamente encadeada.
+Implemente os métodos da classe LinkedList. A explicação do que fazer está como comentário no código. Seu objetivo é passar nos testes que disponibilizei. Sua implementação deve ser duplamente encadeada. Sugestão: implemente de maneira iterativa E recursiva o mesmo método.
 
 Ah...confira (sempre!) se você passa nos testes: `gradle test`.
 
