@@ -125,7 +125,7 @@ public class LinkedListAsserts {
         assert ll.getFirst() == 10;
 
         ll.addFirst(30);
-        assert ll.getFirst() == 30;
+        assert ll.getFirst() == 30; /// ????
     }
 
     public void testListGetLast() {

@@ -62,22 +62,37 @@ public class LinkedList {
     }
 
     public int getFirst() {
-        return -1;
+
+        if (isEmpty()) throw new RuntimeException("LinkedList vazia");
+        
+        return this.head.value;
     }
 
     public int getLast() {
-        return -1;
+        if (isEmpty()) throw new RuntimeException("LinkedList vazia");
+        
+        return this.tail.value;
     }
 
     // retorna o elemento na posição  passada como parâmetro
     // deve lançar IndexOutOfBoundsException se o índice não for válido.
     public int get(int index) {
-         return -1;
+
+        if (index < 0 || index >= this.size) throw new IndexOutOfBoundsException();
+        
+        Node aux = this.head;
+
+        int i = 0;
+        while (i < index) {
+            aux = aux.next;
+            i++;
+        }
+
+        return aux.value;
     }
 
     // deve lançar exceção caso a fila esteja vazia.
     public int removeFirst() {
-
         
         //muda os ponteiros do primeiro
         if (isEmpty()) throw new RuntimeException("LinkedList vazia");
