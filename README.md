@@ -1,7 +1,7 @@
 # Identificação
 
-* Nome: 
-* Email (@ccc): 
+* Nome: Deborah dos Santos Araujo 
+* Email (@ccc): deborah.araujo@ccc.ufcg.edu.br
 * Matrícula: 
 
 # Roteiro: Implementação de DoubleLinkedList
