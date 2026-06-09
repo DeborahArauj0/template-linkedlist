@@ -151,7 +151,7 @@ public class LinkedList {
         for (int i = 0; i < index; i++)
             aux = aux.next;
 
-        aux.next = aux.next.next.next;
+        aux.prev.next = aux.next;
         aux.next.prev = aux.next;
         this.size--;
         //mais de dois elementos
@@ -192,7 +192,7 @@ public class LinkedList {
 
         if (isEmpty()) return -1;
 
-        int posi = this.size -1;
+        int posi = 0;
 
         Node aux = this.head;
 
@@ -266,6 +266,39 @@ public class LinkedList {
     
     public int size() {
         return this.size;
+    }
+
+    //Esse método move o elemento que está em index para a cabeça da fila. Ele é O(n) para procurar o elemento,
+    //mas para mover, você deve fazer em O(1), ou seja, apenas manipulando referências.
+    public void moveToHead(int index) {
+        //verfica se index é válido
+        if (index < 0 || index >= this.size) throw new IndexOutOfBoundsException();
+
+        Node aux = this.head;
+        //acessa em O(n) o elemento que está no índice
+        for (int i = 0; i < index; i++) {
+            aux = aux.next;
+        }
+
+        if (index == 0) return; //possui apenas um elemento ou ele já é a cabeçao. Não faz alteração nenhuma
+        //esse é o último elemento
+        if (aux == tail) { 
+
+            this.tail = aux.prev;
+            this.tail.next = null;
+
+        } else {
+            aux.prev.next = aux.next; 
+            aux.next.prev = aux.prev;
+
+        }
+        
+        //após remover o elemento da posição index da lista, adiciona na cabeça da fila
+        aux.next = this.head;
+        aux.prev = null;
+        this.head.prev = aux;
+        this.head = aux;
+      
     }
 }
 
