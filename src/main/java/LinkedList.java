@@ -139,7 +139,15 @@ public class LinkedList {
     // lançar exceção se o índice não for válido.
     public int remove(int index) {
 
-        //for até esse indice usando aux como cada passo
+        if (index < 0 || index >= this.size) throw new IndexOutOfBoundsException();
+        //for até esse índice usando aux como cada passo
+        Node aux = this.head;
+
+        // 1 elemento
+
+        //2 elementos {consegue 
+
+        //mais de dois elementos
         return -1;
     }
 
@@ -151,10 +159,41 @@ public class LinkedList {
 
     // retorna a posição da primeira ocorrência do valor passado como parâmetro.
     public int indexOf(int value) {
+
+        if (isEmpty()) return -1;
+
+        int posi = this.size -1;
+
+        Node aux = this.head;
+
+        while (aux != null){
+
+            if (aux.value == value) {
+                return posi;
+            }
+
+            aux = aux.next;
+            posi++;
+        }
+        //caso chegue ao fim e não encontre o element
         return -1;
     }
 
     public boolean contain(int v) {
+
+        if(!isEmpty()) {
+
+            Node aux = this.head;
+
+            while(aux != null){
+                
+                if (aux.value == v) return true; 
+
+                aux = aux.next;
+
+            }
+        }
+
         return false;
     }
    
