@@ -141,20 +141,50 @@ public class LinkedList {
 
         if (index < 0 || index >= this.size) throw new IndexOutOfBoundsException();
         //for até esse índice usando aux como cada passo
+        //se for o primeiro elemento 
+        if(index == 0) removeFirst();
+        //último elemento
+        if(index == size - 1) removeLast();
+
         Node aux = this.head;
 
-        // 1 elemento
+        for (int i = 0; i < index; i++)
+            aux = aux.next;
 
-        //2 elementos {consegue 
-
+        aux.next = aux.next.next.next;
+        aux.next.prev = aux.next;
+        this.size--;
         //mais de dois elementos
-        return -1;
+        return aux.value;
     }
 
     // remove a primeira ocorrência do elemento cujo valor foi passado como parâmetro.
     // se não encontrar, não faça nada. true se remover, false se não remover.
     public boolean removeByValue(int value) {
-        return false;
+
+        if (isEmpty()) return false;
+
+        Node aux = this.head;
+
+        for (int i = 0; i < this.size; i++) {
+            if(value == aux.value) {
+                if (i == 0) {
+                    removeFirst();
+                } else if(i == this.size){
+                    removeLast();
+                } else {
+                    aux.next = aux.next.next;
+                    aux.next.prev = aux;
+                    this.size--;
+                }
+                return true;
+            }
+
+            aux = aux.next;
+        }
+
+        return false; //caso não encontre o valor 
+
     }
 
     // retorna a posição da primeira ocorrência do valor passado como parâmetro.
@@ -175,7 +205,7 @@ public class LinkedList {
             aux = aux.next;
             posi++;
         }
-        //caso chegue ao fim e não encontre o element
+        //caso chegue ao fim e não encontre o elemento
         return -1;
     }
 
