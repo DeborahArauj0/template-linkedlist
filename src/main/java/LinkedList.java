@@ -59,6 +59,22 @@ public class LinkedList {
 
     // adiciona um valor na posição passada como parâmetro
     public void add(int index, int valor) {
+
+        if (index < 0 || index >= this.size) throw new IndexOutOfBoundsException();
+
+        Node newNode = new Node(valor);
+
+        if(isEmpty()) {
+            this.head = newNode;
+            this.tail = newNode;
+
+        } 
+
+        Node aux = this.head;
+
+        if 
+
+
     }
 
     public int getFirst() {
@@ -142,9 +158,9 @@ public class LinkedList {
         if (index < 0 || index >= this.size) throw new IndexOutOfBoundsException();
         //for até esse índice usando aux como cada passo
         //se for o primeiro elemento 
-        if(index == 0) removeFirst();
+        if(index == 0) return removeFirst();
         //último elemento
-        if(index == size - 1) removeLast();
+        if(index == size - 1) return removeLast();
 
         Node aux = this.head;
 
@@ -152,7 +168,7 @@ public class LinkedList {
             aux = aux.next;
 
         aux.prev.next = aux.next;
-        aux.next.prev = aux.next;
+        aux.next.prev = aux.prev;
         this.size--;
         //mais de dois elementos
         return aux.value;
